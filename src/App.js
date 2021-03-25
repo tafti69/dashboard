@@ -1,4 +1,10 @@
-import { FormControl, InputLabel, Select } from "@material-ui/core";
+import React from "react";
+import {
+  FormControl,
+  InputLabel,
+  NativeSelect,
+  Select,
+} from "@material-ui/core";
 import styled from "styled-components";
 import ProductList from "./components/ProductList";
 import plus from "./plus.svg";
@@ -64,17 +70,46 @@ const PlusIcon = styled.img`
 function App() {
   const classes = useStyles();
 
+  const [state, setState] = React.useState({
+    age: "",
+    name: "hai",
+  });
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    setState({
+      ...state,
+      [name]: event.target.value,
+    });
+  };
+
   return (
     <BodyWrapper>
       <Wrapper>
         <WrapperTop>
           {/* material ui components */}
-          <FormControl className={classes.formControl}>
+          {
+            /* <FormControl className={classes.formControl}>
             <Select className={classes.inputSize} value={10}>
               <option value={10}>All Posts</option>
               <option value={20}>Popular Posts</option>
             </Select>
-          </FormControl>
+          </FormControl> */
+            <FormControl className={classes.formControl}>
+              <NativeSelect
+                value={state.age}
+                onChange={handleChange}
+                name="age"
+                className={classes.inputSize}
+                inputProps={{ "aria-label": "age" }}
+              >
+                <option value="">All Posts</option>
+                <option value={10}>Ten</option>
+                <option value={20}>Twenty</option>
+                <option value={30}>Thirty</option>
+              </NativeSelect>
+            </FormControl>
+          }
 
           <Button>
             <PlusIcon src={plus} />
