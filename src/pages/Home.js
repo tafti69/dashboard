@@ -69,23 +69,23 @@ const ModalButton = styled.button`
 `;
 
 const ImageOne = styled.div`
-  width: 340px;
+  width: 350px;
   height: 250px;
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: -2%;
+  left: 2%;
 `;
 
 const ImageTwo = styled.div`
-  width: 300px;
+  width: 400px;
   height: 350px;
   position: absolute;
   top: 55%;
-  right: 5%;
+  right: -3%;
 `;
 
 const ImageThree = styled.div`
-  width: 300px;
+  width: 450px;
   height: 350px;
   position: absolute;
   top: 90%;
@@ -93,19 +93,19 @@ const ImageThree = styled.div`
 `;
 
 const ImageFour = styled.div`
-  width: 300px;
+  width: 350px;
   height: 350px;
   position: absolute;
-  top: 5%;
-  right: 8%;
+  top: -3%;
+  right: 5%;
 `;
 
 const ImageFive = styled.div`
-  width: 300px;
+  width: 320px;
   height: 350px;
   position: absolute;
   top: 45%;
-  left: 8%;
+  left: 4%;
 `;
 
 const ImageItself = styled.img`
