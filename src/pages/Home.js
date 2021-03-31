@@ -286,27 +286,27 @@ export const Home = () => {
           <Circle>
             <AccessTimeIcon />
           </Circle>
-          <p>
+          <h4>
             Launching a Facebook ad with Alle takes <br /> under 5 minutes.
-          </p>
+          </h4>
         </FlexText>
         <FlexText>
           <Circle>
             <SignalCellularAltIcon />
           </Circle>
-          <p>
+          <h4>
             Alle insights help you target people that are <br /> more likely to
             become a patient.
-          </p>
+          </h4>
         </FlexText>
         <FlexText>
           <Circle>
             <AttachMoneyIcon />
           </Circle>
-          <p>
+          <h4>
             Have reimbursement credits? Quickly allocate <br /> these to pay for
             your ads.
-          </p>
+          </h4>
         </FlexText>
         <Button onClick={() => setOpen(true)}>GET STARTED</Button>
         {open && (

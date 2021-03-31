@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import model from "../model.png";
+import model from "../assets/model.png";
 
 const ProductContainer = styled.div`
   width: 350px;

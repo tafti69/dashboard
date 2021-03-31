@@ -7,3 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+p {
+  font-size: 14px;
+  margin: 0;
+}
+
+h4 {
+  font-weight: 400;
+}
