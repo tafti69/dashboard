@@ -25,7 +25,6 @@ const Wrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   margin-top: 1rem;
 `;
 
@@ -33,6 +32,17 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 280px);
   gap: 16px;
+  justify-content: start;
+
+  @media only screen and (max-width: 1600px) {
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+  }
+
+  @media only screen and (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+  }
 `;
 
 const Header = styled.div`
@@ -63,6 +73,18 @@ const ImageBox = styled.div`
   width: 280px;
   height: 280px;
   margin: 8px;
+
+  @media only screen and (max-width: 1600px) {
+    width: 240px;
+    height: 240px;
+    margin: 6px;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    width: 200px;
+    height: 200px;
+    margin: 4px;
+  }
 `;
 
 const Image = styled.img`
@@ -88,15 +110,23 @@ const Column = styled.div`
 `;
 
 const Flex = styled.div`
-  width: 100%;
+  width: 1170px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 1rem 0;
+
+  @media only screen and (max-width: 1600px) {
+    width: 1010px;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    width: 850px;
+  }
 `;
 
 const CkeckDiv = styled.div`
-  width: 900px;
+  width: 80%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -106,6 +136,7 @@ const Post = () => {
   const [checked, setChecked] = useState([]);
   const [age, setAge] = useState("");
   const [age2, setAge2] = useState("");
+  const [gen, setGen] = useState("");
 
   const handleToggle = (product) => {
     const currentIndex = checked.indexOf(product);
@@ -137,6 +168,8 @@ const Post = () => {
           setAge={setAge}
           age2={age2}
           setAge2={setAge2}
+          gen={gen}
+          setGen={setGen}
           checked={checked}
           handleToggle={handleToggle}
         />
@@ -151,6 +184,7 @@ const Post = () => {
                     setChecked([]);
                     setAge("");
                     setAge2("");
+                    setGen("");
                   }}
                 />
               ) : null}
@@ -163,8 +197,18 @@ const Post = () => {
                   }
                 />
               ))}
+              {gen !== "" && (
+                <Chip
+                  style={{ margin: "0 4px" }}
+                  label={gen}
+                  onDelete={() => {
+                    setGen("");
+                  }}
+                />
+              )}
               {(age && age2) !== "" && (
                 <Chip
+                  style={{ margin: "0 4px" }}
                   label={"Aged" + " " + age + " - " + age2}
                   onDelete={() => {
                     setAge("");

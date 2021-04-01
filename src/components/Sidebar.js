@@ -41,13 +41,17 @@ const useStyles = makeStyles((theme) => ({
   acc: {
     paddingLeft: "6rem",
   },
+
+  pr: {
+    fontSize: "16px",
+  },
 }));
 
 const SidebarBlock = styled.div`
-  width: 350px;
+  width: 330px;
   background: #fff;
   height: auto;
-  margin-right: 3rem;
+  margin-right: 2rem;
   font-size: 14px;
   padding-top: 3rem;
 
@@ -126,7 +130,7 @@ const Sidebar = (props) => {
             >
               <p>{type.name}</p>
               {props.checked.indexOf(type.name) === -1 ? null : (
-                <CheckIcon fontSize="small" />
+                <CheckIcon className={classes.pr} />
               )}
             </AccordionDetails>
           ))}
@@ -147,7 +151,7 @@ const Sidebar = (props) => {
             >
               <p>{product.name}</p>
               {props.checked.indexOf(product.name) === -1 ? null : (
-                <CheckIcon fontSize="small" />
+                <CheckIcon className={classes.pr} />
               )}
             </AccordionDetails>
           ))}
@@ -210,11 +214,9 @@ const Sidebar = (props) => {
                 {genders.map((gender) => (
                   <Button
                     key={gender.id}
-                    onClick={() => props.handleToggle(gender.name)}
+                    onClick={() => props.setGen(gender.name)}
                     className={
-                      props.checked.indexOf(gender.name) === -1
-                        ? null
-                        : classes.btn
+                      props.gen.indexOf(gender.name) === -1 ? null : classes.btn
                     }
                   >
                     {gender.name}
