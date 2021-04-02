@@ -46,6 +46,9 @@ const Content = styled.div`
 `;
 
 const Header = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
   height: 90px;
   background: #fff;
